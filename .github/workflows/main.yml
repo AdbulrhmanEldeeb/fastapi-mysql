@@ -19,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11'
+        python-version: '3.12'
 
     - name: Install dependencies
       run: |
@@ -29,12 +29,10 @@ jobs:
         pip install fastapi pydantic uvicorn sqlalchemy pymysql
 
     - name: Set up MySQL
-      uses: mirromutth/runs-on-mysql@v1.1
-      with:
-        mysql-version: 'latest'
-        mysql-db: 'store'
-        mysql-user: 'root'
-        mysql-password: 'Dontwastetime1'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y mysql-client
+        mysql --host=sql8.freesqldatabase.com --port=3306 --user=sql8740746 --password=N7K4Nx7g6c -e "CREATE DATABASE IF NOT EXISTS sql8740746;"
 
     - name: Run migrations
       run: |
