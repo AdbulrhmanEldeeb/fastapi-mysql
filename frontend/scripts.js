@@ -1,5 +1,5 @@
 // scripts.js
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://fastapi-mysql-ok3a.onrender.com/';
 
 async function getCustomer() {
     const id = document.getElementById('get-customer-id').value;

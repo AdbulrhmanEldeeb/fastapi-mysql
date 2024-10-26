@@ -108,3 +108,4 @@ schema.json
 .env
 *.env.*
 
+.vercel
